@@ -1,1 +1,12 @@
 A repositor for the U of M Flint Rover.
+
+The goal of this project was to create a remote control car.
+
+Steps to the process:
+1.A USB controler is conected to the computer
+2.CollectingInfo.py takes the information and turns it into a number from 0-4 which realates to a direction
+3.SendingMQTT.py takes that direction and publishes it to a MQTT server called Rover
+4.MQTTSubscrber.py then runs on a raspbery pi that it subscribed to the Rover server and collects the most recent number
+5.MQTTSubscriber then sends that number through a USB connection to an Arduino
+6.MotorPower.ino then takes that number and sends out the 4 apropriate PMW signials to the motor controlers
+7.The motor controler then takes that signal and using anout outside power souce runs the car
